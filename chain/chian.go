@@ -5,7 +5,7 @@ import "github.com/Loner1024/go-blockchain/block"
 
 // BlockChain is a BlockChain.
 type BlockChain struct {
-	blocks []*block.Block
+	Blocks []*block.Block
 }
 
 func NewBlockChain() *BlockChain {
@@ -14,6 +14,6 @@ func NewBlockChain() *BlockChain {
 
 // AddBlock add block to chain.
 func (bc *BlockChain) AddBlock(data string) {
-	prevBlockHash := bc.blocks[len(bc.blocks)-1].PrevBlockHash
-	bc.blocks = append(bc.blocks, block.NewBlock(data, prevBlockHash))
+	prevBlockHash := bc.Blocks[len(bc.Blocks)-1].PrevBlockHash
+	bc.Blocks = append(bc.Blocks, block.NewBlock(data, prevBlockHash))
 }
