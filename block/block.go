@@ -28,6 +28,11 @@ func NewBlock(data string, prevBlockHash []byte) *Block {
 	return block
 }
 
+// NewGenesisBlock create genesis block.
+func NewGenesisBlock() *Block {
+	return NewBlock("Genesis Block", []byte{})
+}
+
 // SetHash will set hash value for block.
 func (b *Block) SetHash() {
 	timestamp := []byte(strconv.FormatInt(b.Timestamp, 10))
